@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.ipynb_checkpoints/
+.rapids/
+.venv/
+.pytest_cache/
+
+# Generated benchmark data and local run output
+data/
+benchmark_output/
+**/traces.json
+**/plots/
+results/**/runs.json
+results/reference/*.csv
+results/reference/*.meta.json
+
+# Notebook-execution artifacts
+*.executed_*.ipynb
+*.executed_*.html
+*.cleaned_*.ipynb
+
+# Root-level figures produced by notebooks/scripts
+/components.pdf
+/components.png
+/matrix_comparison.png
+
+# Local tooling
+.DS_Store
+tb_logs/
+.tb_venv/

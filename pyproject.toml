@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "symnmf-factors"
+version = "0.1.0"
+description = "GPU-accelerated SymNMF factor discovery with AdaptGrow"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "torch>=2.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+gds = ["kvikio>=24.0"]
+notebook = [
+  "jupyterlab>=4",
+  "matplotlib>=3.8",
+  "pandas>=2.0",
+  "pyarrow>=14",
+]
+rapids = ["cudf-cu12>=24.0"]
+
+[project.urls]
+Homepage = "https://github.com/NVIDIA/SymNMF-factors"
+Documentation = "https://github.com/NVIDIA/SymNMF-factors/tree/main/docs"
+Issues = "https://github.com/NVIDIA/SymNMF-factors/issues"
+Repository = "https://github.com/NVIDIA/SymNMF-factors"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["adaptgrow*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+markers = [
+  "gpu: requires a CUDA-capable PyTorch installation",
+  "distributed: requires multiple GPU processes",
+]

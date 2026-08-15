@@ -1,0 +1,11 @@
+* text=auto eol=lf
+
+*.ipynb text eol=lf
+*.slurm text eol=lf
+
+*.dat binary
+*.npy binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary

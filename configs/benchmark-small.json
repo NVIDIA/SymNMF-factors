@@ -1,0 +1,20 @@
+{
+  "name": "small-correlation-adaptgrow",
+  "seed": 42,
+  "matrix": {
+    "kind": "corr",
+    "size": 100
+  },
+  "solver": {
+    "name": "AdaptGrow",
+    "rank": 10,
+    "learning_rate": 2.0,
+    "max_iterations": 200,
+    "precision": "float32",
+    "allow_tf32": false
+  },
+  "runtime": {
+    "device": "cpu-or-cuda",
+    "torch_version": "record-at-run-time"
+  }
+}
